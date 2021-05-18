@@ -1,19 +1,17 @@
 class Enemy{
     constructor(x,y,width,height){
-    
-    this.width = 40;
-    this.height = 80;
-    
+        
+        this.body=Bodies.rectangle(x,y,width,height)
+        this.width = width;
+        this.height = height;   
+        
     World.add(world,this.body);
-    this.image = loadImage("sprites/skeleton enemy.jpg")
+    this.image = loadImage("sprites/enimer.png")
     }
     
     display(){
-    strokeWeight(3);
-    stroke("blue");
-    fill("red");
     imageMode(CENTER);
-    image(this.image,0,0,this.width,this.height)
+    image(this.image,this.body.position.x,this.body.position.y,this.width,this.height)
     }
     
     
